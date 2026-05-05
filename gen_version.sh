@@ -25,15 +25,15 @@
 
 set -exuo pipefail
 
-base_dir=$(ls -d --indicator-style=none base/types-requests-*)
-expected_pattern='^base/types-requests-[1-9][0-9]*[.][0-9]+([.][0-9]+)*$'
+base_dir=$(ls -d --indicator-style=none base/types_requests-*)
+expected_pattern='^base/types_requests-[1-9][0-9]*[.][0-9]+([.][0-9]+)*$'
 
 if [[ ! ${base_dir} =~ ${expected_pattern} ]]; then
     echo "ERROR: Unexpected version in base directory name: '${base_dir}'" 1>&2
     exit 1
 fi
 
-base_version=$(echo "${base_dir}" | sed 's#^base/types-requests-\(.*\)$#\1#')
+base_version=$(echo "${base_dir}" | sed 's#^base/types_requests-\(.*\)$#\1#')
 echo "Upstream version appears to be ${base_version}"
 
 base_version_egrep_pattern=$(echo "${base_version}" | sed 's/[.]/[.]/g')

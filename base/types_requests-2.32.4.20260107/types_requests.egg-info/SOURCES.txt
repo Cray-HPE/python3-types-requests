@@ -1,5 +1,8 @@
 CHANGELOG.md
+LICENSE
 MANIFEST.in
+README.md
+pyproject.toml
 setup.py
 requests-stubs/METADATA.toml
 requests-stubs/__init__.pyi
@@ -15,6 +18,7 @@ requests-stubs/help.pyi
 requests-stubs/hooks.pyi
 requests-stubs/models.pyi
 requests-stubs/packages.pyi
+requests-stubs/py.typed
 requests-stubs/sessions.pyi
 requests-stubs/status_codes.pyi
 requests-stubs/structures.pyi
