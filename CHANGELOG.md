@@ -1,4 +1,7 @@
+## 2.31.0.5.1 (2026-05-05)
+
 First release of Cray/HPE fork of types-requests.
+Backport fix for https://github.com/python/typeshed/issues/15685
 
 ## 2.31.0.5 (2023-09-25)
 
