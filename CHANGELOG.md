@@ -1,5 +1,178 @@
 First release of Cray/HPE fork of types-requests.
 
+## 2.32.4.20260107 (2026-01-07)
+
+[requests] requests.exceptions.JSONDecodeError inherits from json.JSONDecodeError ([#15168](https://github.com/python/typeshed/pull/15168))
+
+## 2.32.4.20250913 (2025-09-13)
+
+[requests] Allow "connect" timeout to be `None` in timeout configuration tuple ([#14700](https://github.com/python/typeshed/pull/14700))
+
+## 2.32.4.20250809 (2025-08-09)
+
+Mark stub-only private symbols as `@type_check_only` in third-party stubs (#14545)
+
+## 2.32.4.20250611 (2025-06-11)
+
+[requests] Update to 2.32.4 (#14254)
+
+## 2.32.0.20250602 (2025-06-02)
+
+Update mypy to 1.16.0 (#14194)
+
+Co-authored-by: Sebastian Rittau <srittau@rittau.biz>
+Co-authored-by: Alex Waygood <Alex.Waygood@Gmail.com>
+
+## 2.32.0.20250515 (2025-05-15)
+
+[requests] Add a _JSON type alias (#14064)
+
+## 2.32.0.20250328 (2025-03-28)
+
+[requests] Remove Session.redirect_cache (#13723)
+
+## 2.32.0.20250306 (2025-03-06)
+
+Update tools versions in `stubtest` workflow (#13582)
+
+## 2.32.0.20250301 (2025-03-01)
+
+Fix conflicting imports (#13561)
+
+## 2.32.0.20241016 (2024-10-16)
+
+remove unneeded Iterable base class from CookieJar (#12812)
+
+## 2.32.0.20240914 (2024-09-14)
+
+Correct requests `cookies` argument (#12654)
+
+## 2.32.0.20240907 (2024-09-07)
+
+requests: Session.adapters is a mapping of Adapters (#12473)
+
+Signed-off-by: Stephen Finucane <stephen@that.guru>
+
+## 2.32.0.20240905 (2024-09-05)
+
+Add hint for requests.models.Response.raw (#12616)
+
+## 2.32.0.20240712 (2024-07-12)
+
+requests: Add connection property (type HTTPAdapter) to the Response class (#12279)
+
+The `Response` instance is built by `HTTPAdapter`. When built, a property called `connection` is added to the `Response` that points back to the `HTTPAdapter` that created it. For example, this is used in the `requests` library's `HTTPDigestAuth` class to remake requests with credentials after authorization is requested by a server.
+
+## 2.32.0.20240622 (2024-06-22)
+
+requests: Fix Response.content return type to include None (#12180)
+
+## 2.32.0.20240602 (2024-06-02)
+
+[requests] Update to 2.32.3 (#12060)
+
+## 2.32.0.20240523 (2024-05-23)
+
+[requests] Update to 2.32.2 (#12000)
+
+Also replace some `Any` annotations with `Incomplete` and use `Final` in `requests.__version__`.
+
+## 2.32.0.20240521 (2024-05-21)
+
+[stubsabot] Bump requests to 2.32.* (#11991)
+
+Release: https://pypi.org/pypi/requests/2.32.1
+Homepage: https://requests.readthedocs.io
+Repository: https://github.com/psf/requests
+Typeshed stubs: https://github.com/python/typeshed/tree/main/stubs/requests
+Diff: https://github.com/psf/requests/compare/v2.31.0...v2.32.1
+
+Stubsabot analysis of the diff between the two releases:
+ - Total lines of Python code added: 486.
+ - Total lines of Python code deleted: 131.
+
+## 2.31.0.20240406 (2024-04-06)
+
+requests: export `packages` and `utils` (#11723)
+
+## 2.31.0.20240403 (2024-04-03)
+
+requests: remove a `type: ignore` (#11704)
+
+## 2.31.0.20240402 (2024-04-02)
+
+requests: annotate RequestsCookieJar (#11656)
+
+## 2.31.0.20240311 (2024-03-11)
+
+Use PEP 570 syntax in third party stubs (#11554)
+
+## 2.31.0.20240310 (2024-03-10)
+
+Bump mypy to 1.9, add to json.encoder, small fixups (#11549)
+
+Co-authored-by: Alex Waygood <Alex.Waygood@Gmail.com>
+
+## 2.31.0.20240218 (2024-02-18)
+
+requests: Allow passing None header values (#11370)
+
+https://github.com/python/typeshed/pull/7773 changed
+`requests.session.Session` methods to accept None for header values, but
+didn't do quite the same for the functions in `requests.api`.  I think
+this was a mistake.  The functions in `requests.api` just pass through
+the `headers` argument without doing anything in particular to it.
+
+Furthermore, it's useful to be able to pass None as a header value:
+because `requests.utils.default_headers` sets an `Accept-Encoding`
+header by default, the easiest way to send a request with no
+`Accept-Encoding` header is something like `requests.get(url,
+headers={"Accept-Encoding": None})`.  It's annoying to have to construct
+a `Session` just to pass type-checking.
+
+It's a little confusing for the type alias to be called
+`_HeadersUpdateMapping` in `requests.sessions` but `_HeadersMapping` in
+`requests.api`; this is because the latter name was already used in
+other type stubs (`tensorflow.keras.callbacks`), so it seemed best to
+avoid breaking API.
+
+## 2.31.0.20240125 (2024-01-25)
+
+Add parameter type to PreparedRequest.prepare_content_length (#11304)
+
+## 2.31.0.20240106 (2024-01-06)
+
+Update typing_extensions imports in third-party stubs (#11245)
+
+## 2.31.0.20231231 (2023-12-31)
+
+requests: Use the `Any` trick in `HTTPError` (#11207)
+
+## 2.31.0.10 (2023-10-18)
+
+requests: annotate `utils.get_encoding_from_headers()` (#10901)
+
+## 2.31.0.9 (2023-10-13)
+
+[requests] Allow HTTPError.response to be None (#10875)
+
+This aligns with the definition in requests, but means that user code might
+need additional assertions to ensure that `HTTPError.response` is not `None`.
+
+## 2.31.0.8 (2023-10-05)
+
+`types-requests`, `types-influxdb-client`: add note to the PyPI readme about the `urllib3` pin (#10839)
+
+## 2.31.0.7 (2023-10-01)
+
+Remove stubs for `urllib3` (#10812)
+
+Both types-requests and types-influxdb-client now depend on urllib3>=2 instead of types-urllib3. That in turn means that types-caldav, types-slumber and types-requests-oauthlib all depend indirectly on urllib3>=2, since all three stubs packages depend on types-requests.
+
+## 2.31.0.6 (2023-09-27)
+
+[requests] loosen HTTPError constructor (#10776)
+
 ## 2.31.0.5 (2023-09-25)
 
 [requests] Allow PreparedRequest for RequestException(request=...) (#10767)
