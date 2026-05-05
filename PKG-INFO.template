@@ -9,6 +9,7 @@ Project-URL: Issue tracker, https://github.com/Cray-HPE/python3-types-requests/i
 Classifier: License :: OSI Approved :: Apache Software License
 Classifier: Programming Language :: Python :: 3
 Classifier: Typing :: Stubs Only
+Requires-Python: >=3.7
 Description-Content-Type: text/markdown
 
 INSERT_DESCRIPTION_HERE

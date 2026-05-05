@@ -16,13 +16,13 @@ https://github.com/python/typeshed/tree/main/stubs/requests. All fixes for
 types and metadata should be contributed there.
 
 See https://github.com/python/typeshed/blob/main/README.md for more details.
-This package was generated from typeshed commit `cec86eb22e12bf0cded2509c09a93f539d69327e` and was tested
+This package was generated from typeshed commit `ec52bf1adde1d3183d0595d2ba982589df48dff1` and was tested
 with mypy 1.5.1, pyright 1.1.328, and
 pytype 2023.8.31.
 '''.lstrip()
 
 setup(name=name,
-      version="2.31.0.5",
+      version="2.31.0.6",
       description=description,
       long_description=long_description,
       long_description_content_type="text/markdown",
@@ -37,6 +37,7 @@ setup(name=name,
       packages=['requests-stubs'],
       package_data={'requests-stubs': ['__init__.pyi', '__version__.pyi', 'adapters.pyi', 'api.pyi', 'auth.pyi', 'certs.pyi', 'compat.pyi', 'cookies.pyi', 'exceptions.pyi', 'help.pyi', 'hooks.pyi', 'models.pyi', 'packages.pyi', 'sessions.pyi', 'status_codes.pyi', 'structures.pyi', 'utils.pyi', 'METADATA.toml']},
       license="Apache-2.0 license",
+      python_requires=">=3.7",
       classifiers=[
           "License :: OSI Approved :: Apache Software License",
           "Programming Language :: Python :: 3",
