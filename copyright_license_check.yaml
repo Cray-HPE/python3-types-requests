@@ -33,3 +33,6 @@
 exclude_subdirectories:
     - "vendor"
     - "base"
+
+exclude_files:
+    - "setup.py"
